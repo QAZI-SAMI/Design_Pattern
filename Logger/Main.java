@@ -3,14 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dp.chain.lginmsg;
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
+package Logger;
 
 public class Main {
 	
@@ -63,7 +56,8 @@ public class Main {
          "This is an error information.");
       loggerChain2.logOnceMessage(AbstractLogger.WARNING,
          "This is an Warning Message.");
-      
+      loggerChain2.logOnceMessage(AbstractLogger.DEBUG, 
+         "This is an debug level information.");
       
       
    }
