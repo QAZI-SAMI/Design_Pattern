@@ -3,32 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dp.chain.lginmsg;
+package Logger;
 
-public class ChainPatternDemo {
-	
-   private static AbstractLogger getChainOfLoggers(){
+public class ConsoleLogger extends AbstractLogger {
 
-      AbstractLogger errorLogger = new ErrorLogger(AbstractLogger.ERROR);
-      AbstractLogger fileLogger = new FileLogger(AbstractLogger.DEBUG);
-      AbstractLogger consoleLogger = new ConsoleLogger(AbstractLogger.INFO);
-
-      errorLogger.setNextLogger(fileLogger);
-      fileLogger.setNextLogger(consoleLogger);
-
-      return errorLogger;	
+   public ConsoleLogger(int level){
+      this.level = level;
    }
 
-   public static void main(String[] args) {
-      AbstractLogger loggerChain = getChainOfLoggers();
-
-      loggerChain.logMessage(AbstractLogger.INFO, 
-         "This is an information.");
-
-      loggerChain.logMessage(AbstractLogger.DEBUG, 
-         "This is an debug level information.");
-
-      loggerChain.logMessage(AbstractLogger.ERROR, 
-         "This is an error information.");
+   @Override
+   protected void write(String message) {		
+      System.out.println("Standard Console::Logger: " + message);
    }
 }
