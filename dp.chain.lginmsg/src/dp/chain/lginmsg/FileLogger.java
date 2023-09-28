@@ -3,21 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dp.chain.lginmsg;
+package Logger;
 
-/**
- *
- * @author fa20-bse-024
- */
 public class FileLogger extends AbstractLogger {
-    public FileLogger(int level ){
-        this.level = level;
-        
-    }
-@Override
 
-protected void write(String message) {
-    System.out.println("File: : Logger " + message);
-    
-}
+   public FileLogger(int level){
+      this.level = level;
+   }
+
+   @Override
+   protected void write(String message) {		
+      System.out.println("File::Logger: " + message);
+   }
 }
