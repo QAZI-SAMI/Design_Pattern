@@ -5,21 +5,25 @@
  */
 package dp.chain.lginmsg;
 
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 
-public class ConsoleLogger extends AbstractLogger {
 
-   public ConsoleLogger(int level){
-      this.level = level;
-   }
+/**
+ *
+ * @author fa20-bse-018
+ */
+public class DatabaseLogger extends AbstractLogger{
+    public DatabaseLogger(int level){
+        this.level=level;
+    }
 
-   @Override
-   protected void write(String message) {		
-      System.out.println("Standard Console::Logger: " + message);
-   }
+    @Override
+    protected void write(String message) {
+       System.out.println("Database::Logger: " + message);
+    }
+    
 }
